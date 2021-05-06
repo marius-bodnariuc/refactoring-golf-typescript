@@ -1,10 +1,10 @@
 import {Incalculable} from "./incalculable";
 
 export class Money<A = number, B = string> {
-    public value: A;
-    public currency: B;
+    public value: number;
+    public currency: string;
 
-    constructor(first: A, second: B) {
+    constructor(first: number, second: string) {
         this.value = first;
         this.currency = second;
     }

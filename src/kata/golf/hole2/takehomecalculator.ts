@@ -1,6 +1,6 @@
 import {Incalculable} from "./incalculable";
 
-export class Money<A, B = string> {
+export class Money<A = number, B = string> {
     public value: A;
     public currency: B;
 

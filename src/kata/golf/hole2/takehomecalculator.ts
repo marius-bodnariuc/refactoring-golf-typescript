@@ -29,7 +29,7 @@ export class Takehomecalculator {
         }
 
         for (const next of pairs) {
-            total = new Money<number, string>(total.value + next.value, next.currency)
+            total = new Money(total.value + next.value, next.currency)
         }
 
         const amount:number = total.value * (this.percent / 100.0 );

@@ -19,16 +19,16 @@ export class Takehomecalculator {
 
     netAmount(first: Money, ...rest : Money[] ): Money {
 
-        const pairs: Array<Money> = Array.from(rest);
+        const monies: Array<Money> = Array.from(rest);
         let total: Money = first
 
-        for (let next of pairs) {
+        for (let next of monies) {
             if (next.currency !== total.currency) {
                 throw new Incalculable()
             }
         }
 
-        for (const next of pairs) {
+        for (const next of monies) {
             total = new Money(total.value + next.value, next.currency)
         }
 

@@ -9,6 +9,13 @@ export class Money {
         this.value = value;
         this.currency = currency;
     }
+
+    plus(other: Money): Money {
+        if(other.currency !== this.currency){
+            throw new Incalculable();
+        }
+        return new Money(this.value + other.value, other.currency);
+    }
 }
 
 export class Takehomecalculator {

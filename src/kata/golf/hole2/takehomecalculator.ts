@@ -1,11 +1,11 @@
 import {Incalculable} from "./incalculable";
 
 export class Pair<A, B> {
-    public first: A;
+    public value: A;
     public second: B;
 
     constructor(first: A, second: B) {
-        this.first = first;
+        this.value = first;
         this.second = second;
     }
 }
@@ -29,16 +29,16 @@ export class Takehomecalculator {
         }
 
         for (const next of pairs) {
-            total = new Pair<number, string>(total.first + next.first, next.second)
+            total = new Pair<number, string>(total.value + next.value, next.second)
         }
 
-        const amount:number = total.first * (this.percent / 100.0 );
+        const amount:number = total.value * (this.percent / 100.0 );
         const tax: Pair<number, string> = new Pair(Math.trunc(amount), first.second);
 
         if (total.second !== tax.second) {
             throw new Incalculable()
         }
-        return new Pair(total.first - tax.first, first.second)
+        return new Pair(total.value - tax.value, first.second)
     }
 
 }

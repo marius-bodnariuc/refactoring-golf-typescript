@@ -23,10 +23,6 @@ export class Takehomecalculator {
         const monies: Array<Money> = Array.from(rest);
         let total: Money = first
 
-        for (let next of monies) {
-
-        }
-
         for (const next of monies) {
             if (next.currency !== total.currency) {
                 throw new Incalculable()

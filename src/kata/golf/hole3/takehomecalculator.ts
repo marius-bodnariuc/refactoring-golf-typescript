@@ -31,10 +31,7 @@ export class Takehomecalculator {
         let total: Money = first
 
         for (const next of monies) {
-            if (next.currency !== total.currency) {
-                throw new Incalculable()
-            }
-            total = new Money(total.value + next.value, next.currency)
+            total = total.plus(next);
         }
 
         const amount:number = total.value * (this.percent / 100.0 );
